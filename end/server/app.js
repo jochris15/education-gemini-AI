@@ -17,7 +17,7 @@ app.get('/popular-pokemon', async (req, res, next) => {
         });
 
         const prompt =
-            "Please give me only a name for a popular pokemon without bolding the text";
+            "Please give me only a name for a popular orange fire pokemon without bolding the text";
 
         const resp = await generativeModel.generateContent(prompt);
         const contentResponse = await resp.response;
