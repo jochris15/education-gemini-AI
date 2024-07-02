@@ -1,4 +1,7 @@
-# GEMINI AI (VERTEX AI)
+# GEMINI AI (Google AI Studio)
 
-## SETUP
-[Dokumentasi SETUP GEMINI AI](https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal#local-shell)
+## SETUP (API KEY)
+[Dokumentasi GET API KEY](https://ai.google.dev/gemini-api/docs/api-key)
+
+## QUICKSTART
+[Dokumentasi QUICKSTART](https://ai.google.dev/gemini-api/docs/quickstart?lang=node)
