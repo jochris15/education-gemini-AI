@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = 3000
@@ -12,7 +13,7 @@ app.get('/popular-pokemon', async (req, res, next) => {
         const { GoogleGenerativeAI } = require("@google/generative-ai");
 
         // Access your API key as an environment variable (see "Set up your API key" above)
-        const genAI = new GoogleGenerativeAI("AIzaSyDCNujvLStvUY9eCXbYnRd50dQwEgQFIfw");
+        const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
