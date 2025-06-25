@@ -28,7 +28,6 @@ export default function HomePage() {
             setLoadingPopular(true)
             const { data } = await axios.get(`http://localhost:3000/popular-pokemon`)
 
-
             setPopular(data)
         } catch (error) {
             console.log(error);

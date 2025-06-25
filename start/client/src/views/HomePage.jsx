@@ -44,7 +44,7 @@ export default function HomePage() {
     return (
         <>
             <div id="PAGE-HOME" className="p-3">
-                {/* <div className="text-2xl font-bold px-10 mt-5"> Today's Most Popular Pokemon
+                <div className="text-2xl font-bold px-10 mt-5"> Today's Most Popular Pokemon
                 </div>
                 <div className="divider px-10"></div>
                 {loadingPopular ? (
@@ -79,7 +79,7 @@ export default function HomePage() {
                         </main>
                     </>
                 )}
-                <div className="divider px-10"></div> */}
+                <div className="divider px-10"></div>
                 {loading ? (
                     <div className="mt-32 flex justify-center items-center">
                         <img src={gearLoad} />

@@ -9,10 +9,13 @@ app.use(express.json())
 
 app.get('/popular-pokemon', async (req, res, next) => {
     try {
-        // const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/pikachu`)
+        // Implementasi AI disini supaya popular pokemonnya ga hard code
+        const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/pikachu`)
 
-        // res.status(200).json(data)
+        res.status(200).json(data)
     } catch (error) {
+        console.log(error);
+
         res.status(500).json({
             message: "Internal server error"
         })
