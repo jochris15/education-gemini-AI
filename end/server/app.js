@@ -1,24 +1,25 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = 3000
 const axios = require('axios')
 const cors = require('cors')
+const { GoogleGenAI } = require("@google/genai")
 
 app.use(cors())
 app.use(express.json())
 
 app.get('/popular-pokemon', async (req, res, next) => {
     try {
-        const { GoogleGenAI } = require("@google/genai")
-
-        const ai = new GoogleGenAI({ apiKey: "AIzaSyBKr0rPCCqYOIzyb7RbnHXYbN30TOa8M1k" });
+        // Implementasi AI disini supaya popular pokemonnya ga hard code
+        const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
-            contents: "Please tell me only the name of most popular purple pokemon today",
+            model: "gemini-2.5-flash",
+            contents: "Please give me only the name of the most popular blue pokemon today",
         });
 
-        const pokemon = response.text.toLowerCase()
+        const pokemon = response.text.toLocaleLowerCase()
         const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
         res.status(200).json(data)
